@@ -1,0 +1,48 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Registro</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <ion-content class="login-content" padding>
+    <div class="login-box">
+      
+      <form (ngSubmit)="register()" #registerForm="ngForm">
+        <ion-row>
+          <ion-col>
+            <ion-list inset>
+              
+              <ion-item>
+                 <ion-label floating > Email</ion-label>
+                <ion-input type="text" name="email" [(ngModel)]="reg.user.email" required></ion-input>
+              </ion-item>
+              
+              <ion-item>
+                <ion-label floating > Clave</ion-label>
+                <ion-input type="password"  name="password" [(ngModel)]="reg.user.password" required></ion-input>
+              </ion-item>
+              
+              <ion-item>
+                <ion-label floating > Confirmar Clave</ion-label>
+                <ion-input type="password"  name="password_confirmation" [(ngModel)]="reg.user.password_confirmation" required></ion-input>
+              </ion-item>
+              
+            </ion-list>
+          </ion-col>
+        </ion-row>
+        
+        <ion-row>
+          <ion-col class="signup-col">
+            <button ion-button class="submit-btn" full type="submit" [disabled]="!registerForm.form.valid">Registrar</button>
+          </ion-col>
+        </ion-row>
+        
+      </form>
+    </div>
+  </ion-content>
+</ion-content>
