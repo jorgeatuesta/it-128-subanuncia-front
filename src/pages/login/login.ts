@@ -34,8 +34,10 @@ export class LoginPage {
     this.user.password = (this.credentials.get('password').value);
     this.auth.login(this.user).subscribe( data =>{
       console.log(data);
+      if(data){
+        this.navCtrl.setRoot(HomePage);
+      }
     } );
-    //this.navCtrl.setRoot(HomePage);
   }
 
   goSignUp() {
